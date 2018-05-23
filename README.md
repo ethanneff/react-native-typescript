@@ -1,4 +1,4 @@
-# React Native with Typescript
+# React Native with TypeScript
 
 ## install
 
