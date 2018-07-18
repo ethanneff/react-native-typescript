@@ -8,7 +8,7 @@ cd react-native-typescript
 yarn install
 ```
 
-### run
+## run
 
 ```sh
 yarn ios
@@ -18,13 +18,13 @@ yarn ios
 yarn android
 ```
 
-### lint
+## lint
 
 ```sh
 yarn lint
 ```
 
-### test
+## test
 
 ```sh
 yarn test
