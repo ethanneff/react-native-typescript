@@ -9,4 +9,5 @@ const Config: IConfig = {
     name: "example"
   }
 };
+
 export default Config;
