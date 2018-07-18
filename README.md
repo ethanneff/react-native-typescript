@@ -6,7 +6,6 @@
 git clone git@github.com:ethanneff/react-native-typescript.git
 cd react-native-typescript
 yarn install
-yarn rebuild
 ```
 
 ### run

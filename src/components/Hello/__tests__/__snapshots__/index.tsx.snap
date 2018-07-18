@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly with defaults 1`] = `
+exports[`Hello renders correctly with defaults 1`] = `
 <View
   style={
     Object {
@@ -10,9 +10,6 @@ exports[`renders correctly with defaults 1`] = `
   }
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Object {
         "color": "#999",
@@ -48,12 +45,7 @@ exports[`renders correctly with defaults 1`] = `
           ]
         }
         accessible={true}
-        collapsable={undefined}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
         isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -65,8 +57,6 @@ exports[`renders correctly with defaults 1`] = `
             "opacity": 1,
           }
         }
-        testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View
           style={
@@ -76,10 +66,6 @@ exports[`renders correctly with defaults 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            disabled={undefined}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {
@@ -113,12 +99,7 @@ exports[`renders correctly with defaults 1`] = `
           ]
         }
         accessible={true}
-        collapsable={undefined}
-        hasTVPreferredFocus={undefined}
-        hitSlop={undefined}
         isTVSelectable={true}
-        nativeID={undefined}
-        onLayout={undefined}
         onResponderGrant={[Function]}
         onResponderMove={[Function]}
         onResponderRelease={[Function]}
@@ -130,8 +111,6 @@ exports[`renders correctly with defaults 1`] = `
             "opacity": 1,
           }
         }
-        testID={undefined}
-        tvParallaxProperties={undefined}
       >
         <View
           style={
@@ -141,10 +120,6 @@ exports[`renders correctly with defaults 1`] = `
           }
         >
           <Text
-            accessible={true}
-            allowFontScaling={true}
-            disabled={undefined}
-            ellipsizeMode="tail"
             style={
               Array [
                 Object {

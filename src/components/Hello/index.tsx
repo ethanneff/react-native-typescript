@@ -1,43 +1,55 @@
-import React from "react";
+import * as React from "react";
 import { Button, StyleSheet, Text, View } from "react-native";
 
-export interface Iprops {
+// styles
+const styles = StyleSheet.create({
+  root: {
+    alignItems: "center",
+    alignSelf: "center"
+  },
+  buttons: {
+    flexDirection: "row"
+  },
+  button: {
+    flex: 1,
+    paddingVertical: 0
+  },
+  greeting: {
+    color: "#999",
+    fontWeight: "bold"
+  }
+});
+
+export interface IProps {
   name: string;
   enthusiasmLevel?: number;
 }
 
-interface Istate {
+export interface IState {
   enthusiasmLevel: number;
 }
 
-function greeter(person) {
-  return "Hello, " + person;
-}
-
-export default class Hello extends React.Component<Iprops, Istate> {
-  constructor(props: Iprops) {
+class Hello extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props);
-
-    if ((props.enthusiasmLevel || 0) <= 0) {
-      throw new Error("You could be a little more enthusiastic. :D");
-    }
-
     this.state = {
       enthusiasmLevel: props.enthusiasmLevel || 1
     };
   }
 
-  private onIncrement = () =>
+  public onIncrement = () =>
     this.setState({ enthusiasmLevel: this.state.enthusiasmLevel + 1 });
-  private onDecrement = () =>
+
+  public onDecrement = () =>
     this.setState({
       enthusiasmLevel:
         this.state.enthusiasmLevel - 1 > 0 ? this.state.enthusiasmLevel - 1 : 0
     });
-  private getExclamationMarks = (numChars: number) =>
+
+  public getExclamationMarks = (numChars: number) =>
     Array(numChars + 1).join("!");
 
-  private render() {
+  public render() {
     return (
       <View style={styles.root}>
         <Text style={styles.greeting}>
@@ -68,21 +80,4 @@ export default class Hello extends React.Component<Iprops, Istate> {
   }
 }
 
-// styles
-const styles = StyleSheet.create({
-  root: {
-    alignItems: "center",
-    alignSelf: "center"
-  },
-  buttons: {
-    flexDirection: "row"
-  },
-  button: {
-    flex: 1,
-    paddingVertical: 0
-  },
-  greeting: {
-    color: "#999",
-    fontWeight: "bold"
-  }
-});
+export default Hello;

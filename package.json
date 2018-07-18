@@ -3,35 +3,39 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "start": "react-native start --reset-cache",
     "ios": "react-native run-ios",
     "android": "react-native run-android",
     "test": "jest --coverage",
-    "lint": "tslint -c tslint.json 'src/**/*.ts{,x}'",
+    "lint": "tsc && tslint -p tsconfig.json -c tslint.json",
     "rebuild": "rm -rf ios; rm -rf android; react-native upgrade"
   },
   "dependencies": {
-    "react": "^16.4.0",
-    "react-native": "0.55.4"
+    "react": "^16.4.1",
+    "react-native": "0.56.0"
   },
   "devDependencies": {
-    "@types/jest": "^22.2.3",
-    "@types/react": "^16.3.14",
-    "@types/react-native": "^0.55.16",
+    "@types/jest": "^23.3.0",
+    "@types/react": "^16.4.6",
+    "@types/react-native": "^0.56.3",
     "@types/react-test-renderer": "^16.0.1",
-    "babel-jest": "23.0.1",
+    "babel-jest": "23.4.0",
     "babel-preset-react-native": "4.0.0",
-    "jest": "23.1.0",
-    "prettier": "^1.13.3",
+    "jest": "23.4.1",
+    "prettier": "^1.13.7",
     "react-addons-test-utils": "^15.6.2",
     "react-native-mock": "^0.3.1",
-    "react-native-typescript-transformer": "^1.2.9",
-    "react-test-renderer": "^16.4.0",
-    "ts-jest": "^22.4.6",
+    "react-native-typescript-transformer": "^1.2.10",
+    "react-test-renderer": "^16.4.1",
+    "ts-jest": "^23.0.1",
+    "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.13.0",
-    "typescript": "^2.8.4"
+    "typescript": "^2.9.2"
   },
   "babel": {
-    "presets": ["react-native"]
+    "presets": [
+      "react-native"
+    ]
   },
   "jest": {
     "preset": "react-native",
