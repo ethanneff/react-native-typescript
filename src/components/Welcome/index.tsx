@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Button, StyleSheet, Text, View } from "react-native";
 
-// styles
 const styles = StyleSheet.create({
   button: {
     flex: 1,
@@ -20,34 +19,22 @@ const styles = StyleSheet.create({
   }
 });
 
-interface IProps {
+interface Props {
   name: string;
   enthusiasmLevel?: number;
 }
 
-export interface IState {
+export interface State {
   enthusiasmLevel: number;
 }
 
-class Welcome extends React.Component<IProps, IState> {
-  constructor(props: IProps) {
+export class Welcome extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       enthusiasmLevel: props.enthusiasmLevel || 1
     };
   }
-
-  public onIncrement = () =>
-    this.setState({ enthusiasmLevel: this.state.enthusiasmLevel + 1 });
-
-  public onDecrement = () =>
-    this.setState({
-      enthusiasmLevel:
-        this.state.enthusiasmLevel - 1 > 0 ? this.state.enthusiasmLevel - 1 : 0
-    });
-
-  public getExclamationMarks = (numChars: number) =>
-    Array(numChars + 1).join("!");
 
   public render() {
     return (
@@ -57,6 +44,7 @@ class Welcome extends React.Component<IProps, IState> {
           {this.props.name +
             this.getExclamationMarks(this.state.enthusiasmLevel)}
         </Text>
+
         <View style={styles.buttons}>
           <View style={styles.button}>
             <Button
@@ -65,6 +53,7 @@ class Welcome extends React.Component<IProps, IState> {
               accessibilityLabel="decrement"
             />
           </View>
+
           <View style={styles.button}>
             <Button
               title="+"
@@ -76,6 +65,16 @@ class Welcome extends React.Component<IProps, IState> {
       </View>
     );
   }
-}
 
-export default Welcome;
+  private onIncrement = () =>
+    this.setState({ enthusiasmLevel: this.state.enthusiasmLevel + 1 });
+
+  private onDecrement = () =>
+    this.setState({
+      enthusiasmLevel:
+        this.state.enthusiasmLevel - 1 > 0 ? this.state.enthusiasmLevel - 1 : 0
+    });
+
+  private getExclamationMarks = (numChars: number) =>
+    Array(numChars + 1).join("!");
+}

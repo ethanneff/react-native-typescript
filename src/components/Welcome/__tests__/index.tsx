@@ -1,6 +1,6 @@
 import * as React from "react";
 import { create } from "react-test-renderer";
-import Welcome, { IState } from "..";
+import { State, Welcome } from "..";
 
 describe("Welcome", () => {
   it("renders correctly with defaults", () => {
@@ -16,7 +16,7 @@ describe("Welcome", () => {
     ).getInstance();
     button.onIncrement();
     button.onIncrement();
-    const state: IState = button.state;
+    const state: State = button.state;
     expect(state.enthusiasmLevel).toBe(3);
   });
 
@@ -26,7 +26,7 @@ describe("Welcome", () => {
     ).getInstance();
     button.onDecrement();
     button.onDecrement();
-    const state: IState = button.state;
+    const state: State = button.state;
     expect(state.enthusiasmLevel).toBe(2);
   });
 
@@ -35,7 +35,7 @@ describe("Welcome", () => {
       <Welcome name="World" enthusiasmLevel={0} />
     ).getInstance();
     button.onDecrement();
-    const state: IState = button.state;
+    const state: State = button.state;
     expect(state.enthusiasmLevel).toBe(0);
   });
 });
