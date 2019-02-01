@@ -1,16 +1,18 @@
 import * as React from "react";
 import { create } from "react-test-renderer";
-import Hello, { IState } from "../";
+import Welcome, { IState } from "..";
 
-describe("Hello", () => {
+describe("Welcome", () => {
   it("renders correctly with defaults", () => {
-    const button = create(<Hello name="World" enthusiasmLevel={1} />).toJSON();
+    const button = create(
+      <Welcome name="World" enthusiasmLevel={1} />
+    ).toJSON();
     expect(button).toMatchSnapshot();
   });
 
   it("increments", () => {
     const button: any = create(
-      <Hello name="World" enthusiasmLevel={1} />
+      <Welcome name="World" enthusiasmLevel={1} />
     ).getInstance();
     button.onIncrement();
     button.onIncrement();
@@ -20,7 +22,7 @@ describe("Hello", () => {
 
   it("decrements", () => {
     const button: any = create(
-      <Hello name="World" enthusiasmLevel={4} />
+      <Welcome name="World" enthusiasmLevel={4} />
     ).getInstance();
     button.onDecrement();
     button.onDecrement();
@@ -30,7 +32,7 @@ describe("Hello", () => {
 
   it("decrements at zero", () => {
     const button: any = create(
-      <Hello name="World" enthusiasmLevel={0} />
+      <Welcome name="World" enthusiasmLevel={0} />
     ).getInstance();
     button.onDecrement();
     const state: IState = button.state;

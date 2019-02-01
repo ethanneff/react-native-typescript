@@ -1,23 +1,23 @@
 import * as React from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
-import Hello from "../../components/Hello";
+import Welcome from "../../components/Welcome";
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    backgroundColor: "#F5FCFF",
+    flex: 1,
+    justifyContent: "center"
+  },
+  instructions: {
+    color: "#333333",
+    marginBottom: 5,
+    textAlign: "center"
   },
   welcome: {
     fontSize: 20,
-    textAlign: "center",
-    margin: 10
-  },
-  instructions: {
-    textAlign: "center",
-    color: "#333333",
-    marginBottom: 5
+    margin: 10,
+    textAlign: "center"
   }
 });
 
@@ -35,7 +35,7 @@ const App = () => (
       To get started, edit ./src/containers/App/index.tsx
     </Text>
     <Text style={styles.instructions}>{instructions}</Text>
-    <Hello name="Human" enthusiasmLevel={1} />
+    <Welcome name="Human" enthusiasmLevel={1} />
   </View>
 );
 

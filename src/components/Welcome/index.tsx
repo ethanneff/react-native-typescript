@@ -3,24 +3,24 @@ import { Button, StyleSheet, Text, View } from "react-native";
 
 // styles
 const styles = StyleSheet.create({
-  root: {
-    alignItems: "center",
-    alignSelf: "center"
-  },
-  buttons: {
-    flexDirection: "row"
-  },
   button: {
     flex: 1,
     paddingVertical: 0
   },
+  buttons: {
+    flexDirection: "row"
+  },
   greeting: {
     color: "#999",
     fontWeight: "bold"
+  },
+  root: {
+    alignItems: "center",
+    alignSelf: "center"
   }
 });
 
-export interface IProps {
+interface IProps {
   name: string;
   enthusiasmLevel?: number;
 }
@@ -29,7 +29,7 @@ export interface IState {
   enthusiasmLevel: number;
 }
 
-class Hello extends React.Component<IProps, IState> {
+class Welcome extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {
@@ -57,7 +57,6 @@ class Hello extends React.Component<IProps, IState> {
           {this.props.name +
             this.getExclamationMarks(this.state.enthusiasmLevel)}
         </Text>
-
         <View style={styles.buttons}>
           <View style={styles.button}>
             <Button
@@ -66,7 +65,6 @@ class Hello extends React.Component<IProps, IState> {
               accessibilityLabel="decrement"
             />
           </View>
-
           <View style={styles.button}>
             <Button
               title="+"
@@ -80,4 +78,4 @@ class Hello extends React.Component<IProps, IState> {
   }
 }
 
-export default Hello;
+export default Welcome;
